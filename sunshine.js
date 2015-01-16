@@ -5,6 +5,13 @@
   Bonus: Use RegEx to create the array
 */
 function reverseString(str) {
+  //turn a string into an array
+  // str = "Pocket";
+  var myArr = str.split("");
+
+  //reverse a array 
+  //reserves the string of the original
+  return myArr.reverse().join("");
 
 }
 
@@ -17,8 +24,18 @@ function reverseString(str) {
   Then convert the array to a string and return it.
 */
 function spliceString(str, char) {
-
+  //use array functionality on the first string
+    var myArr = str.split("");
+  //remove the last character and replace it in the beginning of array
+    var popLastChar = myArr.pop();
+  //add last character back to array in the beginning
+      myArr.unshift(popLastChar);
+  //Push the char into the second to the last position of myArr
+    myArr.splice(-1, 0, char);
+    return myArr.join("");
 }
+
+
 
 /**
   Using the Array map() method write a function that takes an array
@@ -28,5 +45,13 @@ function spliceString(str, char) {
   Instead of "ickenchay", it should just become "hickencay".
 */
 function speakPigLatin(strArray) {
+  //turn string into array
+    var myArr = strArray.split("");
+  //remove first letter .shift()
+    var shiftFirstChar = myArr.shift();
+  //add first letter to the end .push
+  return myArr.push(shiftFirstChar, "ay").join("");
+  //join it back into a string .join
+  
 
 }
