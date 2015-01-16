@@ -45,13 +45,15 @@ function spliceString(str, char) {
   Instead of "ickenchay", it should just become "hickencay".
 */
 function speakPigLatin(strArray) {
-  //turn string into array
-    var myArr = strArray.split("");
+ //turn string into array
+  return strArray.map(function (word) {
+    var wordArray = word.split("");
   //remove first letter .shift()
-    var shiftFirstChar = myArr.shift();
+    var shiftFirstChar = wordArray.shift();
   //add first letter to the end .push
-  return myArr.push(shiftFirstChar, "ay").join("");
+    wordArray.push(shiftFirstChar, "ay");
   //join it back into a string .join
-  
+    return wordArray.join(""); 
+ });
 
 }
